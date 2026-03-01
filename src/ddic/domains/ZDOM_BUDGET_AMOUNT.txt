@@ -1,0 +1,5 @@
+Domain:      ZDOM_BUDGET_AMOUNT
+Description: Budget Amount
+Data Type:   CURR
+Length:      15
+Decimals:    2

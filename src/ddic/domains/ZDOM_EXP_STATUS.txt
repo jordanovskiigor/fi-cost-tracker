@@ -1,0 +1,10 @@
+Domain:      ZDOM_EXP_STATUS
+Description: Aproval Status
+Data Type:   CHAR
+Length:      1
+
+Fixed Values:
+O    - Open
+A    - Approved
+R    - Rejected
+P    - Paid

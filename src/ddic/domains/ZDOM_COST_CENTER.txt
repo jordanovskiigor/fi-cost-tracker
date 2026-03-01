@@ -1,0 +1,4 @@
+Domain:      ZDOM_COST_CENTER
+Description: Cost Center Domain
+Data Type:   CHAR
+Length:      10

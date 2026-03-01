@@ -1,0 +1,12 @@
+Domain:      ZDOM_EXP_CATEGORY
+Description: Expense Category
+Data Type:   CHAR
+Length:      20
+
+Fixed Values:
+TRAVEL       - Travel
+IT_EQUIPME   - IT Equipment
+TRAINING     - Training
+OFFICE       - Office Supplies
+CONSULTING   - Consulting
+OTHER        - Other
