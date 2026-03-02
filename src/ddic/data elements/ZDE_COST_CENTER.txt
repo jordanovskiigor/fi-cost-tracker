@@ -1,0 +1,8 @@
+Data Element: ZDE_COST_CENTER
+Description:  Cost Center Data Element
+Domain:       ZDOM_COST_CENTER
+
+Field Labels:
+Short:    Cost Ctr
+Medium:   Cost Center
+Long:     Cost Center

@@ -1,0 +1,8 @@
+Data Element: ZDE_BUDGET_AMOUNT
+Description:  Budget Amount Data Element
+Domain:       ZDOM_BUDGET_AMOUNT
+
+Field Labels:
+Short:    Amount
+Medium:   Budget Amt
+Long:     Budget Amount

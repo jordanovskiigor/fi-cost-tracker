@@ -1,0 +1,8 @@
+Data Element: ZDE_EXPENSE_AMOUNT
+Description:  Expense Amount Data Element
+Domain:       ZDOM_BUDGET_AMOUNT
+
+Field Labels:
+Short:    Amount
+Medium:   Exp.Amount
+Long:     Expense Amount

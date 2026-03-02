@@ -1,0 +1,8 @@
+Data Element: ZDE_EXPENSE_CATEGORY
+Description:  Expense Category
+Domain:       ZDOM_EXP_CATEGORY
+
+Field Labels:
+Short:    Category
+Medium:   Exp.Category
+Long:     Expense Category

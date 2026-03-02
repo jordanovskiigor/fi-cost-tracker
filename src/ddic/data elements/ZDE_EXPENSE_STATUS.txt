@@ -1,0 +1,8 @@
+Data Element: ZDE_EXP_STATUS
+Description:  Approval Status Data Element
+Domain:       ZDOM_BUDGET_AMOUNT
+
+Field Labels:
+Short:    Status
+Medium:   Exp.Status
+Long:     Expense Status
