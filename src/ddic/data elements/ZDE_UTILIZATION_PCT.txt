@@ -1,0 +1,6 @@
+Data Element : ZDE_UTILIZATION_PCT
+Description  : Budget Utilization %
+Type         : Built-in
+Data Type    : DEC
+Length       : 5
+Decimals     : 2

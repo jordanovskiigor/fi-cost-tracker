@@ -1,0 +1,5 @@
+Data Element : ZDE_TRAFFIC_LIGHT
+Description  : Traffic Light Icon
+Type         : Built-in
+Data Type    : CHAR
+Length       : 4

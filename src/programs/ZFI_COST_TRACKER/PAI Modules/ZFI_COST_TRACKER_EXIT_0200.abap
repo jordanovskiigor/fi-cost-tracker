@@ -7,9 +7,16 @@
 *       text
 *----------------------------------------------------------------------*
 MODULE exit_command_0200 INPUT.
-CASE sy-ucomm.
-  WHEN 'BACK'.
-    SET SCREEN 100.
-    LEAVE SCREEN.
-ENDCASE.
+  CASE sy-ucomm.
+    WHEN 'BACK'.
+      gv_alv_initialized = abap_false.
+      IF go_container IS NOT INITIAL.
+        CALL METHOD go_container->free.
+      ENDIF.
+      CLEAR go_container.
+      CLEAR go_alv.
+      CLEAR gt_fcat.
+      SET SCREEN 100.
+      LEAVE SCREEN.
+  ENDCASE.
 ENDMODULE.
