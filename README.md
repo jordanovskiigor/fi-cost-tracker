@@ -33,7 +33,21 @@ A company has multiple departments (cost centers), each with an annual budget. T
 
 ## Screenshots
 
-> To be added after system testing.
+### Screen 100 - Cost Center Selection
+![Selection Screen](docs/screenshots/screen100.png)
+
+### Screen 200 - ALV Report with Traffic Light
+![ALV Report](docs/screenshots/screen200.png)
+
+### Screen 300 - Create Expense
+![Create Expense](docs/screenshots/screen### Screen 100 - Cost Center Selection
+![Selection Screen](docs/screenshots/screen_100_selection.png)
+
+### Screen 200 - ALV Report with Traffic Light
+![ALV Report](docs/screenshots/screen_200_alv.png)
+
+### Screen 300 - Create Expense
+![Create Expense](docs/screenshots/screen_300_create.png).png)
 
 ---
 
