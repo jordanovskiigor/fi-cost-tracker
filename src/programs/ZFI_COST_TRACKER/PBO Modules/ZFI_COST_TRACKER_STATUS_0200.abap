@@ -1,4 +1,5 @@
 *----------------------------------------------------------------------*
+*----------------------------------------------------------------------*
 ***INCLUDE ZFI_COST_TRACKER_STATUS_020O01.
 *----------------------------------------------------------------------*
 *&---------------------------------------------------------------------*
@@ -18,15 +19,13 @@ MODULE status_0200 OUTPUT.
     INTO CORRESPONDING FIELDS OF TABLE @gt_alv
     WHERE cost_center_id = @zcost_centers-cost_center_id.
 
-  LOOP AT gt_alv ASSIGNING FIELD-SYMBOL(<fs_alv>).
-    IF <fs_alv>-budget_utilization_pct >= 90.
-      <fs_alv>-traffic_light = '@0A@'.
-    ELSEIF <fs_alv>-budget_utilization_pct >= 70.
-      <fs_alv>-traffic_light = '@09@'.
-    ELSE.
-      <fs_alv>-traffic_light = '@08@'.
-    ENDIF.
-  ENDLOOP.
+LOOP AT gt_alv ASSIGNING FIELD-SYMBOL(<fs_alv>).
+  CASE <fs_alv>-status.
+    WHEN 'A'. <fs_alv>-traffic_light = '3'.
+    WHEN 'R'. <fs_alv>-traffic_light = '1'.
+    WHEN OTHERS. <fs_alv>-traffic_light = '2'.
+  ENDCASE.
+ENDLOOP.
 
   IF gv_alv_initialized = abap_false.
 
@@ -49,25 +48,25 @@ MODULE status_0200 OUTPUT.
       ls_fcat-col_opt = abap_true.
       CASE ls_fcat-fieldname.
         WHEN 'COST_CENTER_ID'.
-          ls_fcat-outputlen = 15.
+          ls_fcat-outputlen = 20.
           ls_fcat-coltext   = 'Cost Center'.
         WHEN 'CATEGORY'.
-          ls_fcat-outputlen = 20.
+          ls_fcat-outputlen = 40.
           ls_fcat-coltext   = 'Category'.
         WHEN 'STATUS'.
-          ls_fcat-outputlen = 10.
+          ls_fcat-outputlen = 20.
           ls_fcat-coltext   = 'Status'.
         WHEN 'COST_CENTER_NAME'.
-          ls_fcat-outputlen = 30.
+          ls_fcat-outputlen = 40.
           ls_fcat-coltext   = 'Cost Center Name'.
         WHEN 'TOTAL_EXPENSES'.
-          ls_fcat-outputlen = 18.
+          ls_fcat-outputlen = 20.
           ls_fcat-coltext   = 'Total Expenses'.
         WHEN 'CURRENCY'.
-          ls_fcat-outputlen = 8.
+          ls_fcat-outputlen = 10.
           ls_fcat-coltext   = 'Currency'.
         WHEN 'TRAFFIC_LIGHT'.
-          ls_fcat-outputlen = 12.
+          ls_fcat-outputlen = 15.
           ls_fcat-coltext   = 'Budget Status'.
           ls_fcat-no_out    = ' '.
         WHEN 'BUDGET_UTILIZATION_PCT'.
@@ -78,6 +77,7 @@ MODULE status_0200 OUTPUT.
 
     DATA ls_layo TYPE lvc_s_layo.
     ls_layo-cwidth_opt = abap_true.
+    ls_layo-excp_fname = 'TRAFFIC_LIGHT'.
 
     CALL METHOD go_alv->set_table_for_first_display
       EXPORTING
